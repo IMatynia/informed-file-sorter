@@ -1,3 +1,4 @@
+import logging
 from copy import deepcopy
 from typing import Callable
 
@@ -14,6 +15,9 @@ class ActionHistory:
         self._redo_stack = []
 
     def undo_action(self):
+        if len(self._undo_stack) == 0:
+            logging.info("Nothing to undo")
+            return
         action_tuple, counter_tuple = self._undo_stack[-1]
         self._redo_stack.append(self._undo_stack[-1])
         self._undo_stack.pop()
@@ -21,6 +25,9 @@ class ActionHistory:
         action_func(*action_args)
 
     def redo_action(self):
+        if len(self._redo_stack) == 0:
+            logging.info("Nothing to redo")
+            return
         action_tuple, counter_tuple = self._redo_stack[-1]
         self._undo_stack.append(self._redo_stack[-1])
         self._redo_stack.pop()
