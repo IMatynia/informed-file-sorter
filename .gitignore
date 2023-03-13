@@ -1,3 +1,4 @@
 notes
 .idea
 /src/ui/main_window_view.py
+/src/ui/ui_destination_folder.py

@@ -46,9 +46,10 @@ class FileMovingManager:
     def set_current_source(self, source_folder_path: str):
         if not source_folder_path:
             return
-        self._current_source_folder_path = source_folder_path
         self._source_files = [os.path.join(source_folder_path, file_path) for file_path in
-                              os.listdir(self._current_source_folder_path)]
+                              os.listdir(source_folder_path)]
+
+        self._current_source_folder_path = source_folder_path
 
         def regex_filter(path):
             return bool(re.match(self._regex_filter, path))
@@ -70,3 +71,6 @@ class FileMovingManager:
 
     def get_n_of_source_files(self):
         return len(self._source_files)
+
+    def get_all_destinations(self):
+        return self._destination_folder_paths

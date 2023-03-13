@@ -54,8 +54,8 @@
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>83</width>
-           <height>408</height>
+           <width>695</width>
+           <height>244</height>
           </rect>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_3"/>
@@ -82,8 +82,8 @@
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>83</width>
-           <height>79</height>
+           <width>695</width>
+           <height>243</height>
           </rect>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout"/>
@@ -107,8 +107,6 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actionRevert"/>
-   <addaction name="actionRedo"/>
    <addaction name="separator"/>
    <addaction name="actionPrevious_file"/>
    <addaction name="actionNext_file"/>
@@ -138,8 +136,6 @@
     <addaction name="actionOpen_source"/>
     <addaction name="actionOpen_new_destination"/>
     <addaction name="separator"/>
-    <addaction name="actionRevert"/>
-    <addaction name="actionRedo"/>
     <addaction name="actionConfirm"/>
     <addaction name="separator"/>
     <addaction name="actionNext_file"/>
@@ -157,31 +153,10 @@
    <addaction name="menuFile"/>
    <addaction name="menuView"/>
   </widget>
-  <action name="actionRevert">
-   <property name="icon">
-    <iconset theme="edit-undo"/>
-   </property>
-   <property name="text">
-    <string>Undo</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+Z</string>
-   </property>
-  </action>
-  <action name="actionRedo">
-   <property name="icon">
-    <iconset theme="edit-redo"/>
-   </property>
-   <property name="text">
-    <string>Redo</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+Shift+Z</string>
-   </property>
-  </action>
   <action name="actionNext_file">
    <property name="icon">
-    <iconset theme="go-next"/>
+    <iconset theme="go-next">
+     <normaloff>../../../../../../../../home/imat/.designer/backup</normaloff>../../../../../../../../home/imat/.designer/backup</iconset>
    </property>
    <property name="text">
     <string>Next file</string>
@@ -192,7 +167,8 @@
   </action>
   <action name="actionPrevious_file">
    <property name="icon">
-    <iconset theme="go-previous"/>
+    <iconset theme="go-previous">
+     <normaloff>../../../../../../../../home/imat/.designer/backup</normaloff>../../../../../../../../home/imat/.designer/backup</iconset>
    </property>
    <property name="text">
     <string>Previous file</string>
@@ -203,7 +179,8 @@
   </action>
   <action name="actionDelete_file">
    <property name="icon">
-    <iconset theme="emblem-unreadable"/>
+    <iconset theme="emblem-unreadable">
+     <normaloff>../../../../../../../../home/imat/.designer/backup</normaloff>../../../../../../../../home/imat/.designer/backup</iconset>
    </property>
    <property name="text">
     <string>Delete file</string>
@@ -214,7 +191,8 @@
   </action>
   <action name="actionFilter">
    <property name="icon">
-    <iconset theme="edit-find"/>
+    <iconset theme="edit-find">
+     <normaloff>../../../../../../../../home/imat/.designer/backup</normaloff>../../../../../../../../home/imat/.designer/backup</iconset>
    </property>
    <property name="text">
     <string>Filter</string>
@@ -225,7 +203,8 @@
   </action>
   <action name="actionOpen_source">
    <property name="icon">
-    <iconset theme="document-open"/>
+    <iconset theme="document-open">
+     <normaloff>../../../../../../../../home/imat/.designer/backup</normaloff>../../../../../../../../home/imat/.designer/backup</iconset>
    </property>
    <property name="text">
     <string>Open source folder</string>
@@ -236,7 +215,8 @@
   </action>
   <action name="actionOpen_new_destination">
    <property name="icon">
-    <iconset theme="folder-new"/>
+    <iconset theme="folder-new">
+     <normaloff>../../../../../../../../home/imat/.designer/backup</normaloff>../../../../../../../../home/imat/.designer/backup</iconset>
    </property>
    <property name="text">
     <string>Open new destination</string>
@@ -247,7 +227,8 @@
   </action>
   <action name="actionConfirm">
    <property name="icon">
-    <iconset theme="document-save"/>
+    <iconset theme="document-save">
+     <normaloff>../../../../../../../../home/imat/.designer/backup</normaloff>../../../../../../../../home/imat/.designer/backup</iconset>
    </property>
    <property name="text">
     <string>Confirm</string>
@@ -258,7 +239,8 @@
   </action>
   <action name="actionZoom_in">
    <property name="icon">
-    <iconset theme="zoom-in"/>
+    <iconset theme="zoom-in">
+     <normaloff>../../../../../../../../home/imat/.designer/backup</normaloff>../../../../../../../../home/imat/.designer/backup</iconset>
    </property>
    <property name="text">
     <string>Zoom in</string>
@@ -269,7 +251,8 @@
   </action>
   <action name="actionZoom_out">
    <property name="icon">
-    <iconset theme="zoom-out"/>
+    <iconset theme="zoom-out">
+     <normaloff>../../../../../../../../home/imat/.designer/backup</normaloff>../../../../../../../../home/imat/.designer/backup</iconset>
    </property>
    <property name="text">
     <string>Zoom out</string>
