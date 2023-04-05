@@ -5,7 +5,10 @@ from src.core.main_window import MainWindow
 
 
 def main():
-    logging.basicConfig(level=logging.INFO)
+    logging.basicConfig(format="[%(asctime)s->%(levelname)s->%(module)s" +
+                               "->%(funcName)s]: %(message)s",
+                        datefmt="%H:%M:%S",
+                        level=logging.INFO)
     app = QApplication()
     window = MainWindow()
     window.show()
