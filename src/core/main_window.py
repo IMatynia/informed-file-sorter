@@ -92,7 +92,7 @@ class MainWindow(QMainWindow):
         self._ui.actionDelete_file.triggered.connect(self.on_delete_file)
         self._ui.actionFilter.triggered.connect(self.on_change_filter)
         self._ui.actionOpen_new_destination.triggered.connect(self.on_add_destination)
-        self._ui.actionReload_source.triggered.connect(self._reload_sources)
+        self._ui.actionReload_source.triggered.connect(self._refresh_sources)
         self._destination_container.folders_dropped.connect(self.on_add_destination_dropped)
         self._ui.actionClear_assignments.triggered.connect(self.on_clear_assignments)
 
