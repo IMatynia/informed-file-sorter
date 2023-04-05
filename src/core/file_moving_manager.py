@@ -1,13 +1,14 @@
 import logging
 import os
 import re
+from typing import Optional
 
 
 class FileMovingManager:
-    def __init__(self):
+    def __init__(self, default_filter: str = ".*"):
         self._current_source_folder_path = None
         self._source_files = []
-        self._regex_filter = ".*"
+        self._regex_filter = default_filter
 
         self._destination_folder_paths = []
         self._file_assignments = {}
@@ -24,11 +25,17 @@ class FileMovingManager:
     def add_assignment(self, file_path: str, new_folder_path: str):
         self._file_assignments[file_path] = new_folder_path
 
-    def get_assignment(self, file_path: str) -> str:
-        return self._file_assignments[file_path]
+    def get_assignment(self, file_path: str) -> Optional[str]:
+        if file_path in self._file_assignments:
+            return self._file_assignments[file_path]
+        else:
+            return None
 
     def get_file_on_index(self, index) -> str:
         return self._source_files[index]
+
+    def set_file_on_index(self, index, file_path):
+        self._source_files[index] = file_path
 
     def get_all_assignments(self) -> dict:
         return self._file_assignments
@@ -43,13 +50,17 @@ class FileMovingManager:
                 raise Exception(f"{file_path} is assigned to this folder!")
         self._destination_folder_paths.remove(folder_path_to_remove)
 
-    def set_current_source(self, source_folder_path: str):
+    def set_current_source(self, source_folder_path: Optional[str]):
         if not source_folder_path:
-            return
-        self._source_files = [os.path.join(source_folder_path, file_path) for file_path in
-                              os.listdir(source_folder_path)]
+            self._source_files = []
+            self._current_source_folder_path = None
+        elif os.path.isdir(source_folder_path):
+            self._source_files = [os.path.join(source_folder_path, file_path) for file_path in
+                                  os.listdir(source_folder_path)]
 
-        self._current_source_folder_path = source_folder_path
+            self._current_source_folder_path = source_folder_path
+        else:
+            raise Exception("Invalid source")
 
         def regex_filter(path):
             return bool(re.match(self._regex_filter, path))
@@ -74,3 +85,9 @@ class FileMovingManager:
 
     def get_all_destinations(self):
         return self._destination_folder_paths
+
+    def remove_assignment(self, file_path: str):
+        self._file_assignments.pop(file_path)
+
+    def clear_assignments(self):
+        self._file_assignments.clear()
