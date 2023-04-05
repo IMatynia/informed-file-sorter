@@ -16,14 +16,14 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
-     <widget class="QSplitter" name="splitter_2">
+     <widget class="QSplitter" name="spAddons">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
       <property name="handleWidth">
        <number>15</number>
       </property>
-      <widget class="QSplitter" name="splitter">
+      <widget class="QSplitter" name="spPreview">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
          <horstretch>0</horstretch>
@@ -107,7 +107,6 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="separator"/>
    <addaction name="actionPrevious_file"/>
    <addaction name="actionNext_file"/>
    <addaction name="actionDelete_file"/>
@@ -115,7 +114,10 @@
    <addaction name="separator"/>
    <addaction name="actionOpen_source"/>
    <addaction name="actionOpen_new_destination"/>
+   <addaction name="actionReload_source"/>
+   <addaction name="separator"/>
    <addaction name="actionConfirm"/>
+   <addaction name="actionClear_assignments"/>
    <addaction name="separator"/>
    <addaction name="actionZoom_in"/>
    <addaction name="actionZoom_out"/>
@@ -135,8 +137,10 @@
     </property>
     <addaction name="actionOpen_source"/>
     <addaction name="actionOpen_new_destination"/>
+    <addaction name="actionReload_source"/>
     <addaction name="separator"/>
     <addaction name="actionConfirm"/>
+    <addaction name="actionClear_assignments"/>
     <addaction name="separator"/>
     <addaction name="actionNext_file"/>
     <addaction name="actionPrevious_file"/>
@@ -259,6 +263,26 @@
    </property>
    <property name="shortcut">
     <string>-</string>
+   </property>
+  </action>
+  <action name="actionClear_assignments">
+   <property name="icon">
+    <iconset theme="edit-undo">
+     <normaloff>.</normaloff>.</iconset>
+   </property>
+   <property name="text">
+    <string>Clear assignments</string>
+   </property>
+  </action>
+  <action name="actionReload_source">
+   <property name="icon">
+    <iconset theme="view-refresh"/>
+   </property>
+   <property name="text">
+    <string>Reload source</string>
+   </property>
+   <property name="shortcut">
+    <string>F5</string>
    </property>
   </action>
  </widget>
