@@ -1,15 +1,15 @@
-from typing import Any
-
 class Addon:
-    def __init__(self):
+    def __init__(self, context: "MainWindow"):
         self._addon_info = {}
+        self._context: "MainWindow" = context
+
 
     @classmethod
-    def init(self, context: Any):
+    def init(self):
         pass
 
     @classmethod
-    def unload(self, context: Any):
+    def unload(self):
         pass
 
     def get_info(self):
